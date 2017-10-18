@@ -1,0 +1,176 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: Helvetica;
+  color: white;
+}
+
+/*Every section and footer is a flex container with a single centered flex element, the .container described below.  This allows the backgrounds to extend the entire width of a large screen, while the essential elements reside in a centered container.*/
+section, footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/*.container is a centered flex element 960px wide, centered on the page.  Any containers that deviate from the default flex direction, alignment and justification have those declarations specified.*/
+.container {
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/*.banner has one div - the centered .container*/
+.banner {
+  padding: 0.66rem 0;
+  background-color: black;
+}
+
+/*The centered .banner .container custom settings*/
+.banner .container {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/*Items in the banner container*/
+.banner img {
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  height: 1.5rem;
+}
+
+.banner p {
+  text-transform: uppercase;
+}
+
+/*Announcement backsplash covers width of entire page*/
+.announcement {
+  background-image: url("../images/moto.jpeg");
+  background-size: cover;
+  height: 25rem;
+}
+
+/*Announcement items in .announcement .container*/
+.announcement .container p {
+  background-color: black;
+  width: 17rem;
+  padding-left: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.arrival {
+  font-size: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 0.25rem;
+}
+
+.new-products {
+  font-size: 2rem;
+  padding-top: 0;
+  padding-bottom: 2.2rem;
+}
+
+/*Navigation bar*/
+.menu {
+  background-color: firebrick;
+  align-items: center;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+.menu .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*Featured items*/
+.featured {
+  background-color: white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.featured .container{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*Featured item boxes*/
+.featured .container figure {
+  width: 30%;
+  height: 100%;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Featured item images*/
+.featured .container figure img{
+  height: 9rem;
+  width: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/*Sunglasses image individual styling*/
+#glasses img {
+  height: 5rem;
+  width: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/*Featured items image captions*/
+.featured figcaption {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+/*Footer styling*/
+footer {
+  background-color: white;
+  color: black;
+}
+
+.store-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+/*Why did label-box backgrounds extend past their parent container before the overflow was hidden?*/
+footer .container .info-box {
+  width: 35%;
+  overflow: hidden;
+}
+
+footer .info-box .label-box {
+  background-color: black;
+  color: white;
+  padding: 1rem 0 1rem 2rem;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+}
+
+/*Copyright*/
+.copyright {
+  background-color: black;
+  color: white;
+  align-items: center;
+  height: 5rem;
+}

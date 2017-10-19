@@ -7,21 +7,16 @@ body {
   color: white;
 }
 
-/*Every section and footer is a flex container with a single centered flex element, the .container described below.  This allows the backgrounds to extend the entire width of a large screen, while the essential elements reside in a centered container.*/
-section, footer {
+/*Every .full-width-container is a flex container with a single centered flex element, the .container described below.  This allows the backgrounds to extend the entire width of a large screen, while the essential elements reside in a centered container.*/
+.full-width-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
 }
 
-/*.container is a centered flex element 960px wide, centered on the page.  Any containers that deviate from the default flex direction, alignment and justification have those declarations specified.*/
+/*.container is a flex element 960px wide, centered on the page.*/
 .container {
   width: 960px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 /*.banner has one div - the centered .container*/
@@ -55,20 +50,21 @@ section, footer {
 }
 
 .announcement .container {
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /*Announcement items in .announcement .container*/
-.announcement .container p {
+.announcement .container span {
   background-color: black;
   width: 17rem;
   padding-left: 3rem;
-  /*margin: 0;*/
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.arrival {
+.new-arrival {
   font-size: 1rem;
   padding-top: 2rem;
   padding-bottom: 0.25rem;
@@ -149,34 +145,28 @@ section, footer {
 }
 
 /*Footer styling*/
-footer {
+.store-info {
   background-color: white;
   color: black;
 }
 
-.store-info {
+.store-info .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
   padding-bottom: 4rem;
 }
 
-footer .container .info-box {
+.store-info .container .info-box {
   width: 35%;
 }
 
-.info-box p{
-  width: 100%;
-}
-
-/*Why did adding 2rem left padding cause the entire label-box to extend past its parent info-box without a width adjustment?*/
-footer .info-box .label-box {
+.store-info .info-box .label-box {
+  display: block;
   background-color: black;
   color: white;
   padding: 1rem 0 1rem 2rem;
   text-align: left;
-  width: 89.5%;
   margin: 0;
 }
 
@@ -194,7 +184,7 @@ footer .info-box .label-box {
   .menu .container {
     justify-content: center;
   }
-  #large-menu-item {
+  .large-menu-item {
     display: none;
   }
 
@@ -216,6 +206,7 @@ footer .info-box .label-box {
   .featured .container figure {
     width: 47%;
   }
+
   #glasses {
     display: none;
   }
@@ -227,21 +218,22 @@ footer .info-box .label-box {
     height: 15rem;
   }
 
-  .announcement .container p {
+  .announcement .container span {
     padding-left: 2rem;
     width: 100%;
   }
 
-  .arrival {
+.announcement .container .new-arrival {
     margin-top: 10rem;
     padding-top: 1rem;
-    font-size: 0.77rem
+    font-size: 0.77rem;
   }
 
-  .new-products {
-    margin-bottom: .75rem;
+.announcement .container .new-products {
+    margin-bottom: 2rem;
     padding-top: .2rem;
     font-size: 1rem;
+    overflow: hidden;
   }
 
   .featured .container {
@@ -256,13 +248,7 @@ footer .info-box .label-box {
     display: none;
   }
 
-  footer {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  footer .container {
+  .store-info .container {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -270,31 +256,19 @@ footer .info-box .label-box {
     justify-content: flex-start;
   }
 
-  .store-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 4rem;
-  }
-
-  footer .container .info-box {
+  .store-info .container .info-box {
     width: 100%;
   }
 
-  footer .container .info-box p {
-    width: 90%;
-  }
-
-  footer .container .store-info .info-box .hours{
+  .store-info .container .info-box .hours{
     margin-top: 0.5rem;
   }
 
   .copyright {
     height: 11rem;
   }
+
   .copyright .container{
-    align-items: center;
+    justify-content: center;
   }
 }

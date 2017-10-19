@@ -21,7 +21,7 @@ section, footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /*.banner has one div - the centered .container*/
@@ -54,12 +54,16 @@ section, footer {
   height: 25rem;
 }
 
+.announcement .container {
+  justify-content: center;
+}
+
 /*Announcement items in .announcement .container*/
 .announcement .container p {
   background-color: black;
   width: 17rem;
   padding-left: 3rem;
-  margin: 0;
+  /*margin: 0;*/
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -68,12 +72,14 @@ section, footer {
   font-size: 1rem;
   padding-top: 2rem;
   padding-bottom: 0.25rem;
+  margin-top: 9rem;
 }
 
 .new-products {
   font-size: 2rem;
   padding-top: 0;
   padding-bottom: 2.2rem;
+  margin: 0;
 }
 
 /*Navigation bar*/
@@ -156,18 +162,21 @@ footer {
   padding-bottom: 4rem;
 }
 
-/*Why did label-box backgrounds extend past their parent container before the overflow was hidden?*/
 footer .container .info-box {
   width: 35%;
-  overflow: hidden;
 }
 
+.info-box p{
+  width: 100%;
+}
+
+/*Why did adding 2rem left padding cause the entire label-box to extend past its parent info-box without a width adjustment?*/
 footer .info-box .label-box {
   background-color: black;
   color: white;
   padding: 1rem 0 1rem 2rem;
   text-align: left;
-  width: 100%;
+  width: 89.5%;
   margin: 0;
 }
 
@@ -179,7 +188,7 @@ footer .info-box .label-box {
   height: 5rem;
 }
 
-/*<!-- Responsive items for tablet-portrait-->*/
+/*Responsive items for tablet-portrait*/
 @media only screen and (max-width: 1024px) {
   /*Navigation menu*/
   .menu .container {
@@ -209,5 +218,83 @@ footer .info-box .label-box {
   }
   #glasses {
     display: none;
+  }
+}
+/*Responsive items for phones*/
+@media only screen and (max-width: 470px) {
+
+  .announcement {
+    height: 15rem;
+  }
+
+  .announcement .container p {
+    padding-left: 2rem;
+    width: 100%;
+  }
+
+  .arrival {
+    margin-top: 10rem;
+    padding-top: 1rem;
+    font-size: 0.77rem
+  }
+
+  .new-products {
+    margin-bottom: .75rem;
+    padding-top: .2rem;
+    font-size: 1rem;
+  }
+
+  .featured .container {
+    justify-content: center;
+  }
+
+  .featured .container figure {
+    width: 90%;
+  }
+
+  #watch {
+    display: none;
+  }
+
+  footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  footer .container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .store-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+
+  footer .container .info-box {
+    width: 100%;
+  }
+
+  footer .container .info-box p {
+    width: 90%;
+  }
+
+  footer .container .store-info .info-box .hours{
+    margin-top: 0.5rem;
+  }
+
+  .copyright {
+    height: 11rem;
+  }
+  .copyright .container{
+    align-items: center;
   }
 }

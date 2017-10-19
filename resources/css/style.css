@@ -88,6 +88,10 @@ section, footer {
   justify-content: space-between;
 }
 
+#responsive-menu-item {
+  display: none;
+}
+
 /*Featured items*/
 .featured {
   background-color: white;
@@ -173,4 +177,37 @@ footer .info-box .label-box {
   color: white;
   align-items: center;
   height: 5rem;
+}
+
+/*<!-- Responsive items for tablet-portrait-->*/
+@media only screen and (max-width: 1024px) {
+  /*Navigation menu*/
+  .menu .container {
+    justify-content: center;
+  }
+  #large-menu-item {
+    display: none;
+  }
+
+  #responsive-menu-item {
+    display: inline-block;
+  }
+
+  /*Announcement message*/
+  /*No design guidance on font size for this screen width*/
+  .arrival {
+    font-size: 0.8rem
+  }
+
+  .new-products {
+    font-size: 1.5rem;
+  }
+
+  /*Featured item boxes*/
+  .featured .container figure {
+    width: 47%;
+  }
+  #glasses {
+    display: none;
+  }
 }
